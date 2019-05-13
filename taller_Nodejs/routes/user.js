@@ -8,7 +8,7 @@ const User= require('../models/user');
 //     });
 // });
 
-app.post("/User",(req,res)=>{
+app.post("/user",(req,res)=>{
     let body=req.body;
     let userGuardar=new User({
         nombre:body.nombre,
@@ -22,13 +22,13 @@ app.post("/User",(req,res)=>{
                 ok:false,
                 error:err
 
-            });
+            })
         }
         if(!usuarioDB){
             return res.status(400).json({
                 ok:false,
                 error:err
-            });
+            })
         }
         res.status(200).json({
             ok:true,
