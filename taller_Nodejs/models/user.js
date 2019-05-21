@@ -28,13 +28,14 @@ let userschema=new Schema({
         required:[true,"El Rol es requerido"]
     },
     state:{
-        type:Boolean
+        type:Boolean,
+        default:true
     }
 
 });
 userschema.methods.toJSON=function(){
     let user=this;
-    let iser_object=user.toObject();
+    let user_object=user.toObject();
     delete user_object.password;
     return user_object
 };
