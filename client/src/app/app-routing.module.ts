@@ -5,11 +5,11 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { RolComponent } from './components/rol/rol.component';
 
 const routes: Routes = [
-  {path:'',component:LoginComponent}
-  ,{path: 'inicio', component: InicioComponent}
-  ,{path: 'login', component: LoginComponent}
-  ,{path:'roles',component:RolComponent}
-  ,{path:'**',component:InicioComponent}
+  { path: '', component: LoginComponent }
+  , { path: 'inicio', component: InicioComponent }
+  , { path: 'login', component: LoginComponent }
+  , { path: 'roles', component: RolComponent }
+  , { path: '**', component: InicioComponent }
 ];
 
 @NgModule({
