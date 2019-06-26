@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UserService } from './user.service';
+import { PermisosService } from './permisos.service';
 
-describe('UserService', () => {
+describe('PermisosService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: UserService = TestBed.get(UserService);
+    const service: PermisosService = TestBed.get(PermisosService);
     expect(service).toBeTruthy();
   });
 });

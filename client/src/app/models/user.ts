@@ -1,6 +1,6 @@
 export class User {
   constructor(_id = '', firstName = '', secondName = '', firstSurname = '', secondSurname = '',
-    email = '', username = '', password = '', rol = 'string', state = true) {
+  email = '', username = '', password = '', rol = 'string', state = true) {
     this._id = _id;
     this.firstName = firstName;
     this.secondName = secondName;

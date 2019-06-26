@@ -1,46 +1,46 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Rol } from '../models/rol';
+import { Sala } from '../models/sala';
 import { UserService } from './user.service';
 import { Global } from './global';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RolService {
+export class SalaService {
   public url: string;
-  public rolSeleccionado: Rol;
-  public roles: Rol[];
+  public salaSeleccionada: Sala;
+  public salas: Sala[];
 
   constructor(public http: HttpClient, userService: UserService) {
     this.url = Global.url;
-    this.rolSeleccionado = new Rol();
+    this.salaSeleccionada = new Sala();
   }
 
-  listarRoles(token): Observable<any> {
+  listarSalas(token): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('token', token);
 
-    return this.http.get(this.url + 'rol', {headers});
+    return this.http.get(this.url + 'sala', {headers});
   }
 
-  guardarRol(token, rol: Rol): Observable<any> {
-    const params = JSON.stringify(rol);
+  guardarSala(token, sala: Sala): Observable<any> {
+    const params = JSON.stringify(sala);
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('token', token);
 
-    return this.http.post(this.url + 'rol', params, {headers});
+    return this.http.post(this.url + 'sala', params, {headers});
   }
 
-  actualizarRol(token, rol: Rol): Observable<any> {
-    const params = JSON.stringify(rol);
+  actualizarSala(token, sala: Sala): Observable<any> {
+    const params = JSON.stringify(sala);
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('token', token);
 
-    return this.http.put(`${this.url}rol/${rol._id}`, params, {headers});
+    return this.http.put(`${this.url}sala/${sala._id}`, params, {headers});
   }
 
-  eliminarRol(token, idRol): Observable<any> {
+  eliminarSala(token, idSala): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('token', token);
 
-    return this.http.delete(`${this.url}rol/${idRol}`, {headers});
+    return this.http.delete(`${this.url}sala/${idSala}`, {headers});
   }
 }
