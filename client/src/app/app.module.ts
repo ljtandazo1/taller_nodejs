@@ -1,3 +1,4 @@
+import { AccesoComponent } from './components/acceso/acceso.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +21,7 @@ import { PermisoComponent } from './components/permiso/permiso.component';
     RolComponent,
     UserComponent,
     SalaComponent,
+    AccesoComponent,
     PermisoComponent
   ],
   imports: [
